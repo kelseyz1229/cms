@@ -44,9 +44,9 @@ class Config(object):
 
     CLIENT_ID = "3494caa0-f78c-4fd1-9ebd-b98970887627"
 
-    REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    #REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
     #REDIRECT_PATH = "/https://image19.azurewebsites.net/getAToken"
-    #REDIRECT_PATH = "/https://cmswebapp-f0d7f4e4f3g5f0fy.canadacentral-01.azurewebsites.net/getAToken"
+    REDIRECT_PATH = "/https://cmswebapp-f0d7f4e4f3g5f0fy.canadacentral-01.azurewebsites.net/getAToken"
 
 
 
