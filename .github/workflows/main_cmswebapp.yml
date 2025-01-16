@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,7 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
+          sudo apt install unixodbc-dev
           python -m venv venv
           source venv/bin/activate
       
@@ -44,7 +45,7 @@ jobs:
             !venv/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     environment:
       name: 'Production'
