@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,7 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
+          sudo apt install unixodbc-dev
           python -m venv venv
           source venv/bin/activate
       
@@ -44,7 +45,7 @@ jobs:
             !venv/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     environment:
       name: 'Production'
@@ -66,4 +67,4 @@ jobs:
         with:
           app-name: 'image19'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_95A7C2B7C22949D6AADB99BE585B32EC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_75E004DFF1364123A9E6FC459E6BA3B3 }}
