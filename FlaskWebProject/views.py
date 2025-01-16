@@ -136,15 +136,10 @@ def _save_cache(cache):
         session['token_cache'] = cache.serialize()
 
 
-# def _build_msal_app(cache=None, authority=None):
-#     return msal.ConfidentialClientApplication(Config.CLIENT_ID, authority=authority or Config.AUTHORITY,
-#                                               client_credential=Config.CLIENT_SECRET, token_cache=cache)
-
 def _build_msal_app(cache=None, authority=None):
-    return msal.ConfidentialClientApplication(
-        Config.CLIENT_ID, authority=Config.AUTHORITY,
-        client_credential=Config.CLIENT_SECRET, token_cache=cache
-    )
+    return msal.ConfidentialClientApplication(Config.CLIENT_ID, authority=authority or Config.AUTHORITY,
+                                              client_credential=Config.CLIENT_SECRET, token_cache=cache)
+
 
 def _build_auth_url(authority=None, scopes=None, state=None):
     return _build_msal_app(authority=authority).get_authorization_request_url(
