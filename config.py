@@ -47,8 +47,8 @@ class Config(object):
 
 
     #REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
-    REDIRECT_PATH = "/https://image19.azurewebsites.net/getAToken"
-    #REDIRECT_PATH = "/https://localhost5555/getAToken"
+    #REDIRECT_PATH = "/https://image19.azurewebsites.net/getAToken"
+    REDIRECT_PATH = "/https://cmswebapp-f0d7f4e4f3g5f0fy.canadacentral-01.azurewebsites.net/getAToken"
 
 
 
