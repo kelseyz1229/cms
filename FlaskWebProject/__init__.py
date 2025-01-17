@@ -15,9 +15,8 @@ app.config.from_object(Config)
 
 app.logger.setLevel(logging.DEBUG)
 StreamerHandler=logging.StreamHandler()
-StreamerHandler.setLevel(logging.DEBUG)
+StreamerHandler.setLevel(logging.info)
 app.logger.addHandler(StreamerHandler)
-
 
 
 Session(app)
