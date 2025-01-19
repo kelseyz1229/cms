@@ -13,10 +13,17 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 
-app.logger.setLevel(logging.DEBUG)
-StreamerHandler=logging.StreamHandler()
-StreamerHandler.setLevel(logging.DEBUG)
-app.logger.addHandler(StreamerHandler)
+# app.logger.setLevel(logging.INFO)
+# StreamerHandler=logging.StreamHandler()
+# StreamerHandler.setLevel(logging.INFO)
+# app.logger.addHandler(StreamerHandler)
+
+
+LOG = create_logger(app)
+LOG.setLevel(logging.INFO)
+streamHandler = logging.StreamHandler()
+streamHandler.setLevel(logging.INFO)
+LOG.addHandler(streamHandler)
 
 
 
