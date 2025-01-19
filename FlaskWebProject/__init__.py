@@ -14,10 +14,10 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 
-# app.logger.setLevel(logging.INFO)
-# StreamerHandler=logging.StreamHandler()
-# StreamerHandler.setLevel(logging.INFO)
-# app.logger.addHandler(StreamerHandler)
+app.logger.setLevel(logging.INFO)
+StreamerHandler=logging.StreamHandler()
+StreamerHandler.setLevel(logging.INFO)
+app.logger.addHandler(StreamerHandler)
 
 
 # LOG = create_logger(app)
@@ -26,10 +26,7 @@ app.config.from_object(Config)
 # streamHandler.setLevel(logging.INFO)
 # LOG.addHandler(streamHandler)
 
-logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s %(message)s',
-    level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S')
+
 
 Session(app)
 db = SQLAlchemy(app)
