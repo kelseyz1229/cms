@@ -20,13 +20,16 @@ app.config.from_object(Config)
 # app.logger.addHandler(StreamerHandler)
 
 
-LOG = create_logger(app)
-LOG.setLevel(logging.INFO)
-streamHandler = logging.StreamHandler()
-streamHandler.setLevel(logging.INFO)
-LOG.addHandler(streamHandler)
+# LOG = create_logger(app)
+# LOG.setLevel(logging.INFO)
+# streamHandler = logging.StreamHandler()
+# streamHandler.setLevel(logging.INFO)
+# LOG.addHandler(streamHandler)
 
-
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    datefmt='%Y-%m-%d %H:%M:%S')
 
 Session(app)
 db = SQLAlchemy(app)
